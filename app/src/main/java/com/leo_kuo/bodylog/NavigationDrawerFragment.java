@@ -20,7 +20,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -58,6 +64,11 @@ public class NavigationDrawerFragment extends Fragment
     private int mCurrentSelectedPosition = 0;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
+
+    private ListView listView;
+    private String[] list;
+    private List<Map<String, Object>> mList;
+    private ArrayAdapter<String> listAdapter;
 
     public NavigationDrawerFragment()
     {
@@ -105,13 +116,28 @@ public class NavigationDrawerFragment extends Fragment
                 selectItem(position);
             }
         });
-        String[] navi_list = getResources().getStringArray(R.array.navi);
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(
-                getActionBar().getThemedContext(),
-                android.R.layout.simple_list_item_activated_1,
-                android.R.id.text1,
-                navi_list
-        ));
+
+        mList = new ArrayList<Map<String, Object>>();
+        list = getResources().getStringArray(R.array.navi);
+        for (int i=0; i<list.length; i++)
+        {
+            Map<String, Object> item = new HashMap<String, Object>();
+            item.put("imgView", android.R.drawable.ic_input_get);
+            item.put("txtView", list[i]);
+            mList.add(item);
+        }
+
+        // 請注意這裡 SimpleAdpter 第一個參數，用 getActivity 取得目前的 context
+        SimpleAdapter adapter = new SimpleAdapter
+        (
+            getActivity(),
+            mList,
+            R.layout.navi_list_item,
+            new String[] {"imgView", "txtView"},
+            new int[] {R.id.imgView, R.id.txtView}
+        );
+
+        mDrawerListView.setAdapter(adapter);
 
         return mDrawerListView;
     }
