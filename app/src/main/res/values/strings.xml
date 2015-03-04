@@ -7,7 +7,12 @@
     <string name="title_section3">Section 3</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_example">Example action</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_about">關於</string>
+
+    <string-array name="navi">
+        <item>歷史記錄</item>
+        <item>紀錄項目</item>
+        <item>使用設定</item>
+    </string-array>
 
 </resources>
