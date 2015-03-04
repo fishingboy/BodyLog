@@ -1,5 +1,6 @@
 package com.leo_kuo.bodylog;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -11,6 +12,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -119,7 +121,7 @@ public class NavigationDrawerFragment extends Fragment
 
         mList = new ArrayList<Map<String, Object>>();
         list = getResources().getStringArray(R.array.navi);
-        navi_icon = new int[]{R.drawable.history, R.drawable.record, R.drawable.setting};
+        navi_icon = new int[]{R.drawable.photo, R.drawable.history, R.drawable.record, R.drawable.setting};
         for (int i=0; i<list.length; i++)
         {
             Map<String, Object> item = new HashMap<String, Object>();
@@ -233,6 +235,7 @@ public class NavigationDrawerFragment extends Fragment
 
     private void selectItem(int position)
     {
+        Log.i("LeoLog", "selectItem position = " + position);
         mCurrentSelectedPosition = position;
         if (mDrawerListView != null)
         {
@@ -245,6 +248,38 @@ public class NavigationDrawerFragment extends Fragment
         if (mCallbacks != null)
         {
             mCallbacks.onNavigationDrawerItemSelected(position);
+        }
+
+        Intent intent = new Intent();
+        switch (position)
+        {
+            // 使用者設定
+            case 0:
+                Lib.alert(getActivity(), "使用者設定");
+                intent.setClass(getActivity(), UserSetting.class);
+                startActivity(intent);
+                break;
+
+            // 歷史記錄
+            case 1:
+                Lib.alert(getActivity(), "歷史記錄");
+//                intent.setClass(getActivity(), UserSetting.class);
+//                startActivity(intent);
+                break;
+
+            // 紀錄項目
+            case 2:
+                Lib.alert(getActivity(), "記錄項目");
+//                intent.setClass(getActivity(), UserSetting.class);
+//                startActivity(intent);
+                break;
+
+            // 使用設定
+            case 3:
+                Lib.alert(getActivity(), "使用設定");
+//                intent.setClass(getActivity(), UserSetting.class);
+//                startActivity(intent);
+                break;
         }
     }
 

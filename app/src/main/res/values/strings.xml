@@ -10,9 +10,14 @@
     <string name="action_about">關於</string>
 
     <string-array name="navi">
+        <item>使用者設定</item>
         <item>歷史記錄</item>
         <item>紀錄項目</item>
-        <item>使用設定</item>
+        <item>設定</item>
     </string-array>
+
+    <string name="title_activity_user_setting">使用者設定</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
