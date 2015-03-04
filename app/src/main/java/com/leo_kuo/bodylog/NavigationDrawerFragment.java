@@ -65,8 +65,8 @@ public class NavigationDrawerFragment extends Fragment
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
-    private ListView listView;
     private String[] list;
+    private int[] navi_icon;
     private List<Map<String, Object>> mList;
     private ArrayAdapter<String> listAdapter;
 
@@ -119,10 +119,11 @@ public class NavigationDrawerFragment extends Fragment
 
         mList = new ArrayList<Map<String, Object>>();
         list = getResources().getStringArray(R.array.navi);
+        navi_icon = new int[]{R.drawable.history, R.drawable.record, R.drawable.setting};
         for (int i=0; i<list.length; i++)
         {
             Map<String, Object> item = new HashMap<String, Object>();
-            item.put("imgView", android.R.drawable.ic_input_get);
+            item.put("imgView", navi_icon[i]);
             item.put("txtView", list[i]);
             mList.add(item);
         }
@@ -136,7 +137,6 @@ public class NavigationDrawerFragment extends Fragment
             new String[] {"imgView", "txtView"},
             new int[] {R.id.imgView, R.id.txtView}
         );
-
         mDrawerListView.setAdapter(adapter);
 
         return mDrawerListView;

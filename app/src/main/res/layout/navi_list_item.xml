@@ -7,12 +7,14 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imgView"/>
+        android:id="@+id/imgView"
+        android:padding="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
-        android:id="@+id/txtView"/>
+        android:id="@+id/txtView"
+        android:padding="5dp"/>
 </LinearLayout>
