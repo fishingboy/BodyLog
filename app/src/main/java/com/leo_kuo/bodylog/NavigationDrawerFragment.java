@@ -121,7 +121,7 @@ public class NavigationDrawerFragment extends Fragment
 
         mList = new ArrayList<Map<String, Object>>();
         list = getResources().getStringArray(R.array.navi);
-        navi_icon = new int[]{R.drawable.photo, R.drawable.history, R.drawable.record, R.drawable.setting};
+        navi_icon = new int[]{R.drawable.profile, R.drawable.history, R.drawable.record, R.drawable.setting};
         for (int i=0; i<list.length; i++)
         {
             Map<String, Object> item = new HashMap<String, Object>();
