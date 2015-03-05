@@ -123,13 +123,13 @@ public class NavigationDrawerFragment extends Fragment
         list = getResources().getStringArray(R.array.navi);
         navi_icon = new int[]
         {
-                R.drawable.profile,
-                R.drawable.history,
-                R.drawable.record,
-                R.drawable.chart,
+                R.drawable.ic_profile,
+                R.drawable.ic_history,
+                R.drawable.ic_record,
+                R.drawable.ic_chart,
                 R.drawable.ic_import,
                 R.drawable.ic_export,
-                R.drawable.setting
+                R.drawable.ic_setting
         };
 
         for (int i=0; i<list.length; i++)
