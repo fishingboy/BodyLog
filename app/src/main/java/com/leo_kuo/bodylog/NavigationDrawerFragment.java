@@ -233,6 +233,9 @@ public class NavigationDrawerFragment extends Fragment
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
 
+    // 記錄是否為第一次自動 click
+    // TODO 有時間把這個爛方法改掉
+    public static boolean init_click = true;
     private void selectItem(int position)
     {
         Log.i("LeoLog", "selectItem position = " + position);
@@ -251,35 +254,42 @@ public class NavigationDrawerFragment extends Fragment
         }
 
         Intent intent = new Intent();
-        switch (position)
+        if (init_click)
         {
-            // 使用者設定
-            case 0:
-                Lib.alert(getActivity(), "使用者設定");
-                intent.setClass(getActivity(), UserSetting.class);
-                startActivity(intent);
-                break;
+            init_click = false;
+        }
+        else
+        {
+            switch (position)
+            {
+                // 使用者設定
+                case 0:
+                    Lib.alert(getActivity(), "使用者設定");
+                    intent.setClass(getActivity(), UserSetting.class);
+                    startActivity(intent);
+                    break;
 
-            // 歷史記錄
-            case 1:
-                Lib.alert(getActivity(), "歷史記錄");
+                // 歷史記錄
+                case 1:
+                    Lib.alert(getActivity(), "歷史記錄");
 //                intent.setClass(getActivity(), UserSetting.class);
 //                startActivity(intent);
-                break;
+                    break;
 
-            // 紀錄項目
-            case 2:
-                Lib.alert(getActivity(), "記錄項目");
+                // 紀錄項目
+                case 2:
+                    Lib.alert(getActivity(), "記錄項目");
 //                intent.setClass(getActivity(), UserSetting.class);
 //                startActivity(intent);
-                break;
+                    break;
 
-            // 使用設定
-            case 3:
-                Lib.alert(getActivity(), "使用設定");
+                // 使用設定
+                case 3:
+                    Lib.alert(getActivity(), "使用設定");
 //                intent.setClass(getActivity(), UserSetting.class);
 //                startActivity(intent);
-                break;
+                    break;
+            }
         }
     }
 
