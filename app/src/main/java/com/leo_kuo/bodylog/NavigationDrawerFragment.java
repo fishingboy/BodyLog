@@ -282,22 +282,22 @@ public class NavigationDrawerFragment extends Fragment
                 // 歷史記錄
                 case 1:
                     Lib.alert(getActivity(), "歷史記錄");
-//                intent.setClass(getActivity(), UserSetting.class);
-//                startActivity(intent);
+                    intent.setClass(getActivity(), History.class);
+                    startActivity(intent);
                     break;
 
                 // 紀錄項目
                 case 2:
                     Lib.alert(getActivity(), "記錄項目");
-//                intent.setClass(getActivity(), UserSetting.class);
-//                startActivity(intent);
+                    intent.setClass(getActivity(), Form.class);
+                    startActivity(intent);
                     break;
 
                 // 使用設定
-                case 3:
+                case 6:
                     Lib.alert(getActivity(), "使用設定");
-//                intent.setClass(getActivity(), UserSetting.class);
-//                startActivity(intent);
+                    intent.setClass(getActivity(), Setting.class);
+                    startActivity(intent);
                     break;
             }
         }

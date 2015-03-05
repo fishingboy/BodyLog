@@ -20,6 +20,18 @@
             android:name=".UserSetting"
             android:label="@string/title_activity_user_setting" >
         </activity>
+        <activity
+            android:name=".Setting"
+            android:label="@string/title_activity_setting" >
+        </activity>
+        <activity
+            android:name=".History"
+            android:label="@string/title_activity_history" >
+        </activity>
+        <activity
+            android:name=".Form"
+            android:label="@string/title_activity_form" >
+        </activity>
     </application>
 
 </manifest>
