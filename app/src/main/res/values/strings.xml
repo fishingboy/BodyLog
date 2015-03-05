@@ -13,6 +13,9 @@
         <item>使用者設定</item>
         <item>歷史記錄</item>
         <item>紀錄項目</item>
+        <item>圖表</item>
+        <item>匯入</item>
+        <item>匯出</item>
         <item>設定</item>
     </string-array>
 
